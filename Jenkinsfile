@@ -1,7 +1,5 @@
 node('java&&dev') {
-  input 
-    message: 'Introduce un número de tarjeta:', 
-    parameters: [string(defaultValue: '4111111111111111', description: 'Número de tarjeta por defecto', name: 'cardNumber')]
+  input message: 'Introduce un número de tarjeta:', parameters: [string(defaultValue: '4111111111111111', description: 'Número de tarjeta por defecto', name: 'cardNumber')]
   
   stage('Get git repo') {
     // en las scripted se debe indicar para que se traiga el resto del repositorio
