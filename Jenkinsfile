@@ -1,5 +1,11 @@
 node('java&&dev') {
-  def cardNumber=input 'Introduce un número de tarjeta:'
+  input {
+    message 'Introduce un número de tarjeta:'
+    parameters {
+      string(name:'cardNumber', defaultValue: '4111111111111111', description: 'Número de tarjeta por defecto')
+    }
+  }
+  
   stage('Get git repo') {
     // en las scripted se debe indicar para que se traiga el resto del repositorio
     git branch: 'main', url: 'https://github.com/framvaq/apasot-jenkins-scripted-params'
