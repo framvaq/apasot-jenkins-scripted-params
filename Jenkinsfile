@@ -7,7 +7,7 @@ properties([
 node('java&&dev') {
   stage('Get git repo') {
     // en las scripted se debe indicar para que se traiga el resto del repositorio
-    git branch: 'main', url: 'https://github.com/framvaq/apasoft-jenkins-scripted1'
+    git branch: 'main', url: 'https://github.com/framvaq/apasot-jenkins-scripted-params'
   }
 
   stage('Compile') {
