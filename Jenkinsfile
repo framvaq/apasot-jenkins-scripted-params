@@ -4,6 +4,8 @@ node('java&&dev') {
   stage('Check length') {
     if (cardNumber.length() != 16) {
       error 'Invalid card number: The card number must be exactly 16 characters long'
+    } else {
+      echo "Length of card number ${cardNumber} correct"
     }
   }
   
