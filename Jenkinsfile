@@ -1,5 +1,11 @@
 node('java&&dev') {
   def cardNumber=input message: 'Introduce un número de tarjeta:', parameters: [string(defaultValue: '4111111111111111', description: 'Número de tarjeta por defecto', name: 'cardNumber')]
+
+  stage('Check length') {
+    if (cardNumber.length != 16) {
+      error 'Invalid card number: The card number must be exactly 16 characters long'
+    }
+  }
   
   stage('Get git repo') {
     // en las scripted se debe indicar para que se traiga el resto del repositorio
